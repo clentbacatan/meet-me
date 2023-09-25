@@ -1,20 +1,46 @@
-import React from 'react'
+"use client"
 
 
-type Props = {
-  meeting: MeetingInfo
-}
+import React, {useReducer} from 'react'
+import { createContext } from 'react';
 
 
-const Page: React.FC<Props> = ({meeting}) => {
+//components
+import Button from '../Components/Button';
+import Nav from '../Components/Nav';
+import { AddMeetingState } from '../interface/global';
+import AllMeetingList from '../Components/AllMeetingList';
+import { meetingLists } from '../data';
+
+export const MeetingContext =  createContext<MessageContext>({meetings: [], dispatch: () => {}});
+
+// The property "buttonName" will be pass as props to the "button.tsx" component
+const Page: React.FC = ({}) => {
+
+
+  // The function that will facilitate the request from the addButton
+  const reducer = (state:AddMeetingState , action: any) => {
+      console.log(state);
+      console.log(action);
+   
+      switch(action.type) {
+        case "submit":
+        return {...state, meetings: [action.data, ...state.meetings]};
+      }
+
+      return {...state}
+  }
+
+const data = { meetings: meetingLists }
+const [state, dispatch]= useReducer(reducer, data)
+
+
   return (
-      <div className="card-parent mx-5 my-5">
-        <div>
-          <p>{meeting.title}</p>
-          <h1>{meeting.description}</h1>
-          <p>{meeting.address}</p>
-          <button className='border-2 border-solid hover:bg-orange-400 px-4 py-3 mt-8 mx-auto rounded-lg lg:font-semibold'>Add to favorite</button>
-    </div>
+      <div>
+          <MeetingContext.Provider value={{ meetings: state.meetings, dispatch }}>
+            <Nav/>
+            <AllMeetingList meetings={meetingLists}/>
+        </MeetingContext.Provider>
        </div>
   )
 }

@@ -3,18 +3,18 @@
 import React from 'react'
 import Link from 'next/link';
 
+
+
 //components
 import Button from './Button';
-
-
 
 const Nav = () => {
 
   return (
-    <div>
-        <Link href='/home'><Button button='All meetings'/></Link>
-        <Link href='/addmeeting'><Button button='Add new meetings'/></Link>
-        <Link href='/favorites'><Button button='Add My favorites'/></Link>
+    <div className='flex sticky top-0 items-center md:flex-row justify-between h-20 lg:min-w-full mx-auto px-4 '>
+      <Link href='/Allmeeting'><Button className='button' buttonName="All metting"/></Link>
+      <Link href='/addmeeting'><Button className='button' buttonName="Add metting"/></Link>
+      <Link href='/Allmeeting'><Button className='button' buttonName="Add to favorite"/></Link>
     </div>
     
   )

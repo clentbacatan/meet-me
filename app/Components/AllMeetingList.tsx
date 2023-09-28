@@ -2,12 +2,13 @@
 "use client"
 
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useReducer } from 'react';
 
 
 //components
-import { MeetingContext } from '../home/page';
+import { MeetingContext } from './ContextProvider';
 import Button from './Button';
+import { AddMeetingState } from '../interface/global';
 
 
 interface AllMeetingListProps {
@@ -16,10 +17,12 @@ interface AllMeetingListProps {
   }
 
 
-const AllMeetingList:React.FC<AllMeetingListProps>  = ({meetings}) => {
-    
-    const { allMeetings } = useContext(MeetingContext);
-    
+const AllMeetingList:React.FC <AllMeetingListProps>  = ({}) => {
+
+    const { meetings } = useContext(MeetingContext); // Context from ContextProvider
+
+    console.log(meetings)
+
     return (
 
       

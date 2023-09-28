@@ -11,16 +11,14 @@ import AllMeetingList from '../Components/AllMeetingList';
 import { meetingLists } from '../data';
 import { AddMeetingState } from '../interface/global';
 
-interface AllMeetingListProps {
-    meetings: MeetingData[]; 
-  }
 
-  export const MeetingContext =  createContext<MessageContext>({meetings: [], dispatch: () => {}});
+
+export const MeetingContext =  createContext<MessageContext>({meetings: [], dispatch: () => {}});
 
 const MettingList: React.FC<AllMeetingListProps> = () => {
 
   const reducer = (state:AddMeetingState , action: any) => {
-    console.log(state);
+      console.log(state);
       console.log(action);
 
       switch(action.type) {

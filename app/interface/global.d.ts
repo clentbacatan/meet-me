@@ -22,6 +22,7 @@ type Meeting = {
 interface Layout  {
     className:string
     buttonName: string
+    onClick: any;
     
 }
 
@@ -34,15 +35,22 @@ export interface MeetingData {
 
 }
 
-//interface for the reducer function
-interface MessageContext {
-    meetings : MeetingData[]
-    dispatch: Dispatch<any>
+interface AllMeetingListProps {
+    meetings: MeetingData[]; 
   }
 
+//interface for the reducer function
+export interface MeetingContext {
+    meetings : MeetingData[]
+    dispatch: Dispatch<any>;
 }
 
 //interface for the state of the reducer hook 
-export interface AddMeetingState {
+ interface AddMeetingState {
+    
     meetings : MeetingData[]
+ 
 }
+
+}
+

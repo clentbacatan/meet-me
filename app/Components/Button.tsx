@@ -3,7 +3,8 @@ import React from 'react'
 
 const buttonLayout: Layout = {
   className: "border-2 border-solid hover:bg-orange-400 px-4 py-3 mt-8 mx-auto rounded-lg lg:font-semibold",
-  buttonName: ""
+  buttonName: "",
+  onClick: () => {}
 }
 
 

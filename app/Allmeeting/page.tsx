@@ -35,7 +35,7 @@ const [state, dispatch]= useReducer(reducer, data)
     return ( 
         <div>
           <MeetingContext.Provider value={{ meetings: state.meetings, dispatch }}>
-            <AllMeetingList meetings={meetingLists}/>
+          
           </MeetingContext.Provider>
         </div>
            

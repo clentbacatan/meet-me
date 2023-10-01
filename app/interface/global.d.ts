@@ -11,6 +11,7 @@ type MeetingInfo = {
     title: string;
     description: string;
     address: string;
+    
 }
 
 type Meeting = {
@@ -26,17 +27,18 @@ interface Layout  {
     
 }
 
-export interface MeetingData {
+interface MeetingData {
 
     title: string;
     picture?: string;
     address: string;
     description: string;
-
+    
 }
 
 interface AllMeetingListProps {
-    meetings: MeetingData[]; 
+    meeting: MeetingData[];
+    
   }
 
 //interface for the reducer function
@@ -48,7 +50,7 @@ export interface MeetingContext {
 //interface for the state of the reducer hook 
  interface AddMeetingState {
     
-    meetings : MeetingData[]
+    meeting : MeetingData[]
  
 }
 

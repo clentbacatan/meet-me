@@ -1,9 +1,9 @@
-// export const meetingLists: MeetingData[]  = [
+export const meetingLists: MeetingData[]  = [
 
-//     {
-//         title: "Test Title",
-//         address: "Addresss",
-//         description: "Test"
-//     }
-// ]
+    {
+        title: "Test Title",
+        address: "Addresss",
+        description: "Test"
+    }
+]
 

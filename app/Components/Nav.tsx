@@ -11,7 +11,7 @@ import Button from './Button';
 const Nav = () => {
 
   return (
-    <div className='flex sticky top-0 items-center md:flex-row justify-between h-20 lg:min-w-full mx-auto px-4 '>
+    <div className='flex flex-row-reverse h-20 mx-14 gap-4 pe-36'>
       <Link href='/Allmeeting'><Button className='button' buttonName="All metting"/></Link>
       <Link href='/addmeeting'><Button className='button' buttonName="Add metting"/></Link>
       <Link href='/Allmeeting'><Button className='button' buttonName="Add to favorite"/></Link>

@@ -1,10 +1,23 @@
 "use client"
 
-import React, { useState, useContext } from 'react';
+import React, { useState, useReducer } from 'react';
 import swal from 'sweetalert';
 import MeetingInput from '../CustomHook/meetingInput';
 import { MeetingContext } from '../Components/ContextProvider';
+import { meetingLists } from '../data';
 
+
+const reducer = (state:AddMeetingState , action: any) => {
+  console.log(state);
+  console.log(action);
+
+  switch(action.type) {
+    case 'add' : 
+    return {...state, meetings: [action.data, ...state.meetings] };
+  }
+
+  return {...state}
+}
 
 
 // All the properties from the interface can now be pass as parameters to this function
@@ -16,8 +29,10 @@ import { MeetingContext } from '../Components/ContextProvider';
   const address = MeetingInput("")
   const description = MeetingInput("")
 
+    const data = { meetings: meetingLists }
+    const [state, dispatch]= useReducer(reducer, data);
+
   // dispatch to trigger the reducer
-  const { dispatch } = useContext(MeetingContext);
 
   
   const addButtonSubmit = (event:React.FormEvent) => {
@@ -25,9 +40,6 @@ import { MeetingContext } from '../Components/ContextProvider';
     const data: MeetingData = {title : title.value, address: address.value, description: description.value}
     dispatch({type: "add", data });
     swal("New meeting was added");
-    const clearData = () => {
-
-    }
 
   }
 
@@ -62,6 +74,9 @@ import { MeetingContext } from '../Components/ContextProvider';
         </button>
       </div>
     </form>
+      {state.meetings.map((meeting, index) => {
+        <AllMeetingList key={index} meeting={meeting}/>
+      })}
   </div>
   )
 }

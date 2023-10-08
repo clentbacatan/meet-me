@@ -12,9 +12,9 @@ const Nav = () => {
 
   return (
     <div className='flex flex-row-reverse h-20 mx-14 gap-4 pe-36'>
-      <Link href='/Allmeeting'><Button className='button' buttonName="All metting"/></Link>
-      <Link href='/addmeeting'><Button className='button' buttonName="Add metting"/></Link>
-      <Link href='/Allmeeting'><Button className='button' buttonName="Add to favorite"/></Link>
+      <Link href='/Simulation/list'><Button className='button' buttonName="All metting"/></Link>
+      <Link href='/Simulation/form'><Button className='button' buttonName="Add metting"/></Link>
+      <Link href='/'><Button className='button' buttonName="Add to favorite"/></Link>
     </div>
     
   )

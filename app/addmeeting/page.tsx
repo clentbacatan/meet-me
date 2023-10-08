@@ -5,14 +5,17 @@ import swal from 'sweetalert';
 import MeetingInput from '../CustomHook/meetingInput';
 import { MeetingContext } from '../Components/ContextProvider';
 import { meetingLists } from '../data';
+import AllMeetingList from '../Components/AllMeetingList';
 
 
 const reducer = (state:AddMeetingState , action: any) => {
   console.log(state);
-  console.log(action);
+  console.log(action);      
 
   switch(action.type) {
-    case 'add' : 
+    case 'add' :
+      const {data} = action;
+      data.id = new Date().toJSON();
     return {...state, meetings: [action.data, ...state.meetings] };
   }
 
@@ -74,8 +77,9 @@ const reducer = (state:AddMeetingState , action: any) => {
         </button>
       </div>
     </form>
-      {state.meetings.map((meeting, index) => {
-        <AllMeetingList key={index} meeting={meeting}/>
+      {state.meetings.map(meeting => {
+        console.log(meeting);
+        <AllMeetingList key={meeting.id} meeting={meeting}/>
       })}
   </div>
   )

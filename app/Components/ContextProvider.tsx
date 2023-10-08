@@ -19,7 +19,7 @@ const reducer = (state: AddMeetingState, action: any) => {
 
     switch(action.type) {
         case "add" :
-        return {...state, meetings: [action.data, ...state.meetings]} //returns the new state
+        return {...state, meetings: [action.data, ...state.meeting0]} //returns the new state
     }
     
     return state;

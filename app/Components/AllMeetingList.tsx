@@ -13,6 +13,7 @@ import { meetingLists } from '../data';
 
 
 
+
 const AllMeetingList:React.FC <AllMeetingListProps>  = ({meeting}) => {
 
      // Context from ContextProvider
@@ -22,9 +23,9 @@ const AllMeetingList:React.FC <AllMeetingListProps>  = ({meeting}) => {
 
       
         <div >
-         <p>{title}</p>
-         <p>{description}</p>
-         <p>{address}</p>
+         <p>{meeting.title}</p>
+         <p>{meeting.description}</p>
+         <p>{meeting.address}</p>
         </div>
      
     );

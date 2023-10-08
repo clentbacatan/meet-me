@@ -27,7 +27,7 @@ interface Layout  {
     
 }
 
-interface MeetingData {
+export interface MeetingData {
 
     title: string;
     picture?: string;

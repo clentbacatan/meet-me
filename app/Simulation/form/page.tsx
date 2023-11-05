@@ -9,7 +9,7 @@ import { Dispatch } from 'react';
 import { tasks } from '../Types';
 import Link from 'next/link';
 
-interface ITodoContext {
+export interface ITodoContext {
     activeTasks: ITask[];
     dispatch: Dispatch<any>
 }

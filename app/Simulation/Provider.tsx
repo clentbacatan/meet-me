@@ -49,7 +49,7 @@ const ToDoProvider  = () => {
         <ToDoContext.Provider value={{ activeTasks: state.activeTasks, dispatch }}>
             <Lists/>
             <Form/>
-            <AllLists/>
+            <AllLists title={"asd"} address={"asd"} description={"asd"}/>
         </ToDoContext.Provider>
         </div>
      

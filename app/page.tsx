@@ -24,6 +24,7 @@ export default function Home() {
         <Nav/>
         <Form/>
         <AllLists/>
+        <ToDoProvider/>
       </div>
     </main>
   )
